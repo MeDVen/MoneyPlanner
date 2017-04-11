@@ -20,7 +20,7 @@ public class MainTable {
         RowFilter<Object, Object> filter = new RowFilter<Object, Object>() {
             public boolean include(Entry entry) {
                 Integer population = (Integer) entry.getValue(1);
-                return population.intValue() > 3;
+                return population.intValue() > 0;
             }
         };
         TableRowSorter<TableModel> sorter = new TableRowSorter<>(tableModel);

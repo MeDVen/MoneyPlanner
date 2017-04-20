@@ -22,5 +22,7 @@ public final class Messages {
     private Messages() {
     }
 
-    public static final String moneyPlanner = resourceBundle.getString("moneyPlanner");
+    public static final String MONEY_PLANNER = resourceBundle.getString("moneyPlanner");
+
+    public static final String ADD_ENTRY_DIALOG_TITLE = resourceBundle.getString("addEntryDialogTitle");
 }

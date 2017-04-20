@@ -1,8 +1,14 @@
 package ru.medven.moneyplanner.gui;
 
+import java.util.Enumeration;
+
+import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -17,6 +23,15 @@ public class MainTable {
     public MainTable() {
         TableModel tableModel = initTableModel();
         table = new JTable(tableModel);
+        initColumnFilters(tableModel);
+        initCellRenderer();
+    }
+
+    public JTable getTable() {
+        return table;
+    }
+
+    private void initColumnFilters(TableModel tableModel) {
         RowFilter<Object, Object> filter = new RowFilter<Object, Object>() {
             public boolean include(Entry entry) {
                 Integer population = (Integer) entry.getValue(1);
@@ -28,8 +43,16 @@ public class MainTable {
         table.setRowSorter(sorter);
     }
 
-    public JTable getTable() {
-        return table;
+    private void initCellRenderer() {
+        DefaultTableCellRenderer centerTextRenderer = new DefaultTableCellRenderer();
+        centerTextRenderer.setHorizontalAlignment(JLabel.CENTER);
+
+        TableColumnModel columnModel = table.getColumnModel();
+        Enumeration<TableColumn> columns = columnModel.getColumns();
+        while (columns.hasMoreElements()) {
+            TableColumn tableColumn = columns.nextElement();
+            tableColumn.setCellRenderer(centerTextRenderer);
+        }
     }
 
     private TableModel initTableModel() {

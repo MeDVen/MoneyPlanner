@@ -7,7 +7,7 @@ import javax.swing.JDialog;
 import ru.medven.moneyplanner.i18n.Messages;
 
 /**
- * Adding entry for main table. Choising operation type with combobox and setting value and name of operation. Date can be changed by DatePicker.
+ * Adding entry for main table. Choosing operation type with combobox and setting value and name of operation. Date can be changed by DatePicker.
  * @author rkush
  */
 public class AddEntry extends JDialog {
@@ -21,5 +21,7 @@ public class AddEntry extends JDialog {
         setTitle(Messages.ADD_ENTRY_DIALOG_TITLE);
 
         setSize(WIDTH, HEIGHT);
+
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 }

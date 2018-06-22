@@ -6,6 +6,12 @@ package ru.medven.moneyplanner.entity;
  */
 public enum Type {
 
-    DEBIT,
-    CREDIT;
+    DEBIT("Debit"),
+    CREDIT("Credit");
+
+    private String name;
+
+    Type(String name) {
+        this.name = name;
+    }
 }

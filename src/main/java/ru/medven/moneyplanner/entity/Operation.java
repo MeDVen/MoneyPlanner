@@ -6,6 +6,18 @@ package ru.medven.moneyplanner.entity;
  */
 public enum Operation {
 
-    PLUS,
-    MINUS;
+    PLUS("+"),
+    MINUS("-");
+
+    public static Operation[] operations = new Operation[] { PLUS, MINUS };
+
+    private String name;
+
+    Operation(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

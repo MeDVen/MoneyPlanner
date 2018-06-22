@@ -9,11 +9,11 @@ import java.sql.Timestamp;
  */
 public class Entry {
 
-    String name;
-    BigDecimal value;
-    Operation operation;
-    Timestamp date;
-    Type type;
+    private String name;
+    private BigDecimal value;
+    private Operation operation;
+    private Timestamp date;
+    private Type type;
 
     /**
      * Main constructor with initialize of all fields.
